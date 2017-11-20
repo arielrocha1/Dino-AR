@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudan Demo Ludus", "Kudan Demo Ludus.csproj", "{70F32CD3-BD79-8441-983D-0A38B365088E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kudan Demo Ludus.Editor", "Kudan Demo Ludus.Editor.csproj", "{3E6BB04C-DDF3-21E3-C28F-589D2224FF0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70F32CD3-BD79-8441-983D-0A38B365088E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F32CD3-BD79-8441-983D-0A38B365088E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F32CD3-BD79-8441-983D-0A38B365088E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F32CD3-BD79-8441-983D-0A38B365088E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E6BB04C-DDF3-21E3-C28F-589D2224FF0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6BB04C-DDF3-21E3-C28F-589D2224FF0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6BB04C-DDF3-21E3-C28F-589D2224FF0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6BB04C-DDF3-21E3-C28F-589D2224FF0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
