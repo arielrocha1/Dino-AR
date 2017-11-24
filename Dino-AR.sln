@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dino-AR", "Dino-AR.csproj", "{9990FF18-B0F7-8ADC-718E-D165DAA87E69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dino-AR.Editor", "Dino-AR.Editor.csproj", "{A3E7FC1C-F2A2-B196-B605-327FA7424659}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9990FF18-B0F7-8ADC-718E-D165DAA87E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9990FF18-B0F7-8ADC-718E-D165DAA87E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9990FF18-B0F7-8ADC-718E-D165DAA87E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9990FF18-B0F7-8ADC-718E-D165DAA87E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E7FC1C-F2A2-B196-B605-327FA7424659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E7FC1C-F2A2-B196-B605-327FA7424659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E7FC1C-F2A2-B196-B605-327FA7424659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E7FC1C-F2A2-B196-B605-327FA7424659}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
