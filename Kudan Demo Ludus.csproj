@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Dino\Script\Movement.cs" />
     <Compile Include="Assets\KudanAR\Samples\Flying\FlyBehaviour_RigidbodyVelocity.cs" />
     <Compile Include="Assets\KudanAR\Samples\Flying\FlyBehaviour_TargetTransform.cs" />
     <Compile Include="Assets\KudanAR\Samples\Scripts\MarkerlessTouch.cs" />

@@ -31,8 +31,8 @@ public class Movement : MonoBehaviour {
 		//x com o eixo dos x, y com o eixo dos y, z com o eixo dos z
 		//transform.Translate (Time.deltaTime, 0, 0, Camera.main.transform);
 
-		transform.LookAt (target);
-		transform.Translate (Vector3.forward * 5 * Time.deltaTime);
+		//transform.LookAt (target);
+		transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
 
 	}
 }
