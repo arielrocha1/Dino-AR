@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-	public Transform target;
+	//public Transform target;
 	public Transform myTransform;
+	private Animator anime;
 
 	public float speedMove;
 	//public float speedTarget;
 
 
 	void Start () {
-		
+		anime = GetComponent<Animator>();
 	}
 
 	void Update () {
@@ -33,6 +34,6 @@ public class Movement : MonoBehaviour {
 
 		//transform.LookAt (target);
 		transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
-
+		anime.SetTrigger("Andando");
 	}
 }
