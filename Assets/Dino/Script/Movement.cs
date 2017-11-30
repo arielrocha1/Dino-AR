@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-	//public Transform target;
+	public Transform target;
 	public Transform myTransform;
 	private Animator anime;
 
@@ -13,27 +13,29 @@ public class Movement : MonoBehaviour {
 
 
 	void Start () {
+
 		anime = GetComponent<Animator>();
+		target = GameObject.FindGameObjectWithTag("Target").transform;
+
 	}
 
 	void Update () {
 
-		//direção e distância da transalção
+		if (target) {
+			walk ();
+		} 
+		else {
+			anime.Play("Idle");
+		}
+	}
+
+	void walk(){
 		//transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
-		//transform.Translate (Vector3.up * Time.deltaTime, Space.World);
 
-		//x com o eixo dos x, y com o eixo dos y, z com o eixo dos z
-		//transform.Translate (0, 0, Time.deltaTime);
-		//transform.Translate (0, Time.deltaTime, 0, Space.World);
+		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position), speedMove * Time.deltaTime);
 
-		//direção e distância da transalção
-		//transform.Translate (Vector3.right * Time.deltaTime, Camera.main.transform);
-
-		//x com o eixo dos x, y com o eixo dos y, z com o eixo dos z
-		//transform.Translate (Time.deltaTime, 0, 0, Camera.main.transform);
-
-		//transform.LookAt (target);
-		transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
-		anime.SetTrigger("Andando");
+		transform.position += transform.forward * speedMove * Time.deltaTime;
+		anime.Play("Walk");
 	}
 }
+
