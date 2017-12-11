@@ -5,10 +5,11 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
 	public Transform target;
-	public Transform myTransform;
 	private Animator anime;
 
 	public float speedMove;
+	public float turnRate;
+	private int lockAxis = 0;
 	//public float speedTarget;
 
 
@@ -22,20 +23,32 @@ public class Movement : MonoBehaviour {
 	void Update () {
 
 		if (target) {
-			walk ();
+			Walk ();
+			//Rotate ();
 		} 
 		else {
 			anime.Play("Idle");
 		}
 	}
 
-	void walk(){
+	void Walk(){
 		//transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
 
 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position), speedMove * Time.deltaTime);
+		//transform.rotation = Quaternion.Euler(lockAxis, transform.rotation.eulerAngles.y, lockAxis);
 
 		transform.position += transform.forward * speedMove * Time.deltaTime;
 		anime.Play("Walk");
 	}
-}
 
+	/*void Rotate(){
+
+		Vector3 relativePos = (target.position + new Vector3 (0, 1.5f, 0)) - transform.position;
+		Quaternion rotation = Quaternion.LookRotation (relativePos);
+
+		Quaternion current = transform.localRotation;
+		var rot = Quaternion.Slerp (current, rotation, Time.deltaTime);
+		transform.localRotation;
+	}*/
+
+}
