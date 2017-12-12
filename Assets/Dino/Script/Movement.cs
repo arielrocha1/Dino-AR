@@ -7,9 +7,14 @@ public class Movement : MonoBehaviour {
 	public Transform target;
 	private Animator anime;
 
+    private string hitobject;
+    public bool andar = false;
+
 	public float speedMove;
 	public float turnRate;
 	private int lockAxis = 0;
+
+    public float tempo = 0;
 	//public float speedTarget;
 
 
@@ -22,26 +27,65 @@ public class Movement : MonoBehaviour {
 
 	void Update () {
 
-		if (target) {
-			Walk ();
+        if (andar==true)
+        {
+            transform.position += transform.forward * speedMove * Time.deltaTime;
+            anime.Play("Walk");            
+        }
+        else
+        {
+            anime.Play("Idle");
+        }
+
+        if (tempo > 4)
+        {
+            andar = true;
+        }
+
+        if (tempo > 10)
+        {
+            andar = false;
+        }
+
+        tempo += Time.deltaTime;
+
+        /*if (target) {
+            StartCoroutine(Example());
+            //Walk ();
 			//Rotate ();
 		} 
 		else {
 			anime.Play("Idle");
-		}
-	}
+		}*/
+    }
 
-	void Walk(){
-		//transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
+    /*IEnumerator Example()
+    {
+        yield return new WaitForSeconds(3);
+        andar = true;
+        //Walk();
+    }*/
 
-		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position), speedMove * Time.deltaTime);
-		//transform.rotation = Quaternion.Euler(lockAxis, transform.rotation.eulerAngles.y, lockAxis);
+    /*void Walk(){
 
-		transform.position += transform.forward * speedMove * Time.deltaTime;
-		anime.Play("Walk");
-	}
+        //transform.Translate (Vector3.forward * speedMove * Time.deltaTime);
 
-	/*void Rotate(){
+        //transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (target.position - transform.position), speedMove * Time.deltaTime);
+        //transform.rotation = Quaternion.Euler(lockAxis, transform.rotation.eulerAngles.y, lockAxis);
+
+        Vector3 targetPosition = new Vector3(target.transform.position.x,
+                                                transform.position.y,
+                                                target.transform.position.z);
+
+        transform.LookAt(targetPosition);
+
+        transform.position += transform.forward * speedMove * Time.deltaTime;
+        andar = true;       
+
+    }*/
+
+
+    /*void Rotate(){
 
 		Vector3 relativePos = (target.position + new Vector3 (0, 1.5f, 0)) - transform.position;
 		Quaternion rotation = Quaternion.LookRotation (relativePos);
