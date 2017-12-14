@@ -27,27 +27,37 @@ public class Movement : MonoBehaviour {
 
 	void Update () {
 
-        if (andar==true)
-        {
-            transform.position += transform.forward * speedMove * Time.deltaTime;
-            anime.Play("Walk");            
-        }
-        else
-        {
-            anime.Play("Idle");
-        }
-
-        if (tempo > 4)
+        if (tempo > 4 && tempo < 5)
         {
             andar = true;
+            anime.SetTrigger("playerWalk");
         }
 
         if (tempo > 10)
-        {
+        {            
+            anime.SetTrigger("playerIdle");
             andar = false;
         }
 
+        if (andar==true)
+        {
+
+            /*Vector3 targetPosition = new Vector3(target.transform.position.x,
+                                        transform.position.y,
+                                        target.transform.position.z);
+
+            transform.LookAt(targetPosition);*/
+            transform.position += transform.forward * speedMove * Time.deltaTime;
+            //anime.Play("Walk");                        
+        }
+        else
+        {
+            //anime.SetTrigger("playerIdle");
+        }
+
         tempo += Time.deltaTime;
+
+
 
         /*if (target) {
             StartCoroutine(Example());

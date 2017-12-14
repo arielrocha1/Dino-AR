@@ -107,6 +107,7 @@
     <Compile Include="Assets\KudanAR\Scripts\Components\TransformDrivers\MarkerTransformDriver.cs" />
     <Compile Include="Assets\KudanAR\Scripts\Components\TransformDrivers\MarkerlessTransformDriver.cs" />
     <Compile Include="Assets\KudanAR\Scripts\Components\TransformDrivers\TransformDriverBase.cs" />
+    <Compile Include="Assets\New Folder\InputController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\KudanAR\Materials\Background.shader" />
